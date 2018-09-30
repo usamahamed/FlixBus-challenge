@@ -1,0 +1,33 @@
+.station__delete{
+    left: 9rem;
+    position: absolute;
+}
+i{
+	    margin-left: 3rem;
+}
+	    h3{
+	    	color: #3b5bb3;
+	    }
+	    h4{
+	    	    color: #94bf23;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.mat-divider{
+	    width: 30%;
+}
+.mat-list{
+	margin: 0 9rem;
+}
+.add__bus{
+	    width: 18rem;
+    padding: 9px 47px;
+    background: green;
+    margin: 0 -4rem;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.back__station{
+	margin: 0 8rem;
+    padding: 7px 39px;
+}

@@ -1,0 +1,30 @@
+<div id="content slot__content" 
+style=" ">
+  <mat-card>
+    <h1>Parking Slot</h1>
+      <form class="form" (ngSubmit)="onSubmit(c)" #c="ngForm" >
+
+      <mat-form-field class="full-width">
+        <input matInput ngModel  #slot="ngModel" placeholder="Slot Name" id="slot" name="slot" value="Slot" minlength="3" maxlength="100" required>
+        <mat-error *ngIf="slot.touched && slot.invalid">
+            <div *ngIf="slot.errors.required">    
+                 Please Enter Slot Name
+            </div> 
+            <div *ngIf="slot.errors.minlength">    
+               Slot Name not less than 3 character
+           </div>
+           <div *ngIf="slot.errors.maxlength">    
+              Slot Name not more than 100 character
+          </div>
+        </mat-error>                
+
+      </mat-form-field>
+
+    
+      <br />
+      <br />
+      <button mat-raised-button type="submit" [disabled]="c.invalid">Submit</button>
+
+    </form>
+  </mat-card>
+</div>

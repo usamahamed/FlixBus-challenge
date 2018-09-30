@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+  }
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  th{
+  	    color: #94bf23;
+    font-size: 1rem;
+    padding-left: 1rem;
+  }

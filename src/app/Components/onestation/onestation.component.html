@@ -1,0 +1,56 @@
+<div class="container"  style="    margin: 0 13rem;">
+  <a routerLink="/liststations" class="back__station" mat-raised-button color="primary">Back to Station list List</a>
+
+<mat-list *ngFor="let onestation of station">
+
+
+    <h3>Station Name</h3>
+                <i class="fas fa-car fa-3x"></i>
+
+    <mat-list-item >
+        <h4 mat-line>{{onestation.stationName}}</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      <h3>Station Address</h3>
+ <i class="fas fa-map-marker-alt fa-3x"></i>
+      <mat-list-item >
+          <h4 mat-line>{{onestation.address}}</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <i class="fa fa-compass fa-3x"></i>
+
+        <h3>Station City</h3>
+
+        <mat-list-item >
+            <h4 mat-line>{{onestation.city}}</h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <i class="fas fa-truck-pickup fa-3x"></i>
+
+          <h3>Free SLots</h3>
+
+          <mat-list-item >
+              <h4 mat-line>{{onestation.SlotAval}}</h4>
+            </mat-list-item>
+                        
+      <!-- <h4 mat-line>{{onestation.address}}</h4>
+      <h4 mat-line>{{onestation.city}}</h4>
+      <h4 mat-line>{{onestation.SlotAval}}</h4> -->
+       <a class="btn btn-success add__bus" [routerLink]="['/AddbustoStation']" [queryParams] = {stationName:onestation.stationName,stations:onestation.id}  mat-raised-button color="default">Add Bus to station</a>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
+  <h3 style="    margin-left: 9rem;">All Buses</h3>
+  <mat-list *ngFor="let buses of allbuses">
+                        <i class="fas fa-car fa-3x"></i>
+
+
+    <mat-list-item >
+        <!-- <mat-icon mat-list-icon>info</mat-icon> -->
+        <h4 mat-line>{{buses.plateNumber}}</h4>
+        <button (click) = deleteBus(buses) class="station__delete"  mat-raised-button color="warn">delete</button>
+
+      </mat-list-item>
+  </mat-list>
+</div>

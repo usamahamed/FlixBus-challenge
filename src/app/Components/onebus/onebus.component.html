@@ -1,0 +1,36 @@
+<div class="container" style="    margin: 0 13rem;">
+<a routerLink="/listbus" mat-raised-button color="primary" style="margin: 9px 9rem;">Back to Buses List</a>
+
+<mat-list *ngFor="let onebus of bus">
+    <h3>Plate Number</h3>
+            <i class="fa fa-car fa-3x"></i>
+
+    <mat-list-item >
+        
+        <h4 mat-line>{{onebus.plateNumber}}</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      <h3>Bus Type</h3>
+          <i class="fas fa-truck-pickup fa-3x"></i>
+
+      <mat-list-item >
+          <h4 mat-line>{{onebus.busType}}</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3>Station Name</h3>
+            <i class="fas fa-store-alt fa-3x"></i>
+
+        <mat-list-item >
+
+            <h4 mat-line>{{stationname}}</h4>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+
+         
+                        
+      <!-- <h4 mat-line>{{onestation.address}}</h4>
+      <h4 mat-line>{{onestation.city}}</h4>
+      <h4 mat-line>{{onestation.SlotAval}}</h4> -->
+  </mat-list>
+</div>

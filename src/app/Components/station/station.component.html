@@ -1,0 +1,147 @@
+<div id="content station__content" style="">
+  <mat-card>
+    <h1>Add New Station</h1>
+      <form class="form" (ngSubmit)="onSubmit(c)" #c="ngForm" >
+      <mat-form-field class="full-width">
+        <input matInput #stationName="ngModel" placeholder="stationName" id="stationName" name="stationName" value="stationName" ngModel minlength="3" maxlength="250" required>
+        <mat-error *ngIf="stationName.touched && stationName.invalid">
+            <div *ngIf="stationName.errors.required">    
+                 Please Enter Station Name
+            </div> 
+            <div *ngIf="stationName.errors.minlength">    
+                Station Name not less than 3 character
+           </div>
+           <div *ngIf="stationName.errors.maxlength">    
+              Station Name not more than 250 character
+          </div>
+        </mat-error>  
+        
+      </mat-form-field>
+
+      <table class="full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="full-width">
+          <input matInput #Longitude="ngModel" placeholder="Longitude" id="Longitude" name="Longitude" ngModel required pattern="[0-9]+">
+           <!-- Error Validation -->
+           <mat-error *ngIf="Longitude.touched && Longitude.invalid">
+                    Enter Valid Longitude 
+          </mat-error>  
+        <!--End  Error Validation -->
+        </mat-form-field></td>
+        <td><mat-form-field class="full-width">
+          <input matInput #Latitude="ngModel" placeholder="Latitude" id="Latitude" name="Latitude" ngModel required pattern="[0-9]+">
+           <!-- Error Validation -->
+           <mat-error *ngIf="Latitude.touched && Latitude.invalid">
+               Enter Valid Latitude 
+     </mat-error>  
+   <!--End  Error Validation -->
+        </mat-form-field></td>
+      </tr></table>
+
+      <p>
+        <mat-form-field class="full-width">
+          <textarea matInput #address="ngModel" placeholder="Address" value="Streetname 12a" id="address" name="address" ngModel minlength="4" required></textarea>
+             <!-- Error Validation -->
+           <mat-error *ngIf="address.touched && address.invalid">
+            <div *ngIf="address.errors.required">    
+              Please Enter Address
+         </div> 
+              <div *ngIf="address.errors.minlength">    
+                Address Name not less than 4 character
+            </div>
+     </mat-error>  
+   <!--End  Error Validation -->
+        </mat-form-field>
+      </p>
+
+      <table class="full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="full-width">
+          <input matInput #City="ngModel" placeholder="City" id="city" name="city" ngModel required minlength="2" maxlength="250">
+            <!-- Error Validation -->
+          <mat-error *ngIf="City.touched && City.invalid">
+              <div *ngIf="City.errors.required">    
+                   Please Enter City Name
+              </div> 
+              <div *ngIf="City.errors.minlength">    
+                 City Name not less than 2 character
+             </div>
+             <div *ngIf="City.errors.maxlength">    
+                City Name not more than 250 character
+            </div>
+          </mat-error>  
+        <!--End  Error Validation -->
+        </mat-form-field></td>
+
+        <td><mat-form-field class="full-width">
+          <input matInput #postalCode="ngModel" minlength="4" maxlength="6" id="postal" name="postal" placeholder="Zip Code" value="2900TY" ngModel required>
+          <mat-hint align="end">from 4 to 6 digits</mat-hint>
+           <!-- Error Validation -->
+           <mat-error *ngIf="postalCode.touched && postalCode.invalid">
+            <div *ngIf="postalCode.errors.required">    
+                 Please Enter post code
+            </div> 
+            <div *ngIf="postalCode.errors.minlength">    
+              post code not less than 4 number
+           </div>
+           <div *ngIf="postalCode.errors.maxlength">    
+            post code not less than 6 number
+          </div>
+        </mat-error>  
+      <!--End  Error Validation -->
+
+        </mat-form-field></td>
+      </tr></table>      
+
+      <table class="full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="full-width">
+            <input matInput #streetName="ngModel" placeholder="Street Name" id="streetName" name="streetName" ngModel required minlength="2" maxlength="250">
+              <!-- Error Validation -->
+          <mat-error *ngIf="streetName.touched && streetName.invalid">
+              <div *ngIf="streetName.errors.required">    
+                   Please Enter Street Name
+              </div> 
+              <div *ngIf="streetName.errors.minlength">    
+                 Street Name not less than 2 character
+             </div>
+             <div *ngIf="streetName.errors.maxlength">    
+                Street Name not more than 250 character
+            </div>
+          </mat-error>  
+        <!--End  Error Validation -->
+         
+          </mat-form-field></td>
+          <td><mat-form-field class="full-width">
+            <input matInput #HouseNumber="ngModel" id="HouseNumber" name="HouseNumber" placeholder="House Number" value="2900TY" ngModel minlength="2" maxlength="5" pattern="[a-zA-Z0-9\s]+" required>
+            <mat-hint align="end">length from 2 to 5</mat-hint>
+             <!-- Error Validation -->
+          <mat-error *ngIf="HouseNumber.touched && HouseNumber.invalid">
+              <div *ngIf="HouseNumber.errors.required">    
+                   Please Enter House Number
+              </div> 
+              <div *ngIf="HouseNumber.errors.minlength">    
+                  House Number not less than 2 character
+             </div>
+             <div *ngIf="HouseNumber.errors.maxlength">    
+                House Number not more than 5 character
+            </div>
+          </mat-error>  
+        <!--End  Error Validation -->
+            
+          </mat-form-field></td>
+        </tr></table>  
+        <ng-select
+        [items]="slots$"
+        [multiple]="true"
+        [closeOnSelect]="false"
+        [searchable]="false"
+        bindLabel="slot"
+        placeholder="Remaining Slots"
+        name = "selectedSLots"
+        [(ngModel)]="selectedSLots">
+        </ng-select>
+
+      <br />
+      <button mat-raised-button type="submit" [disabled]="c.invalid">Submit</button>
+
+    </form>
+  </mat-card>
+</div>

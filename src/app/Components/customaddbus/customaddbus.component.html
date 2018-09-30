@@ -1,0 +1,40 @@
+<div id="content">
+    <mat-card>
+      <h1>Add new Bus to {{paramvalues.stationName}} Station</h1>
+        <form class="form" (ngSubmit)="onSubmit(c)" #c="ngForm" >
+            <input type="hidden" #stationName [(ngModel)] = "paramvalues.stationName" name="stationName" >
+            <input type="hidden" #stations [(ngModel)] = "paramvalues.stations" name="stations" >
+
+          <mat-form-field>
+            <mat-select id="busType" name="busType" ngModel placeholder="Bus Type">
+              <mat-option *ngFor="let type of BusesType"  [value]="type.value">
+                {{type.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- <p style="width:0;height:0">
+              <mat-form-field [hidden]="true">
+                <mat-select id="stations" name="stations" ngModel placeholder="stations">
+                  <mat-option *ngFor="let station of stations$" [value]="paramvalues.id">
+                    {{station.stationName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+         -->
+          <p> 
+        <mat-form-field class="full-width">
+            <input matInput #plateNumber id="plateNumber" name="plateNumber" placeholder="plate number" pattern="^BUS-[A-Z0-9]{3}-[A-Z0-9]{3}$" ngModel required>
+            <mat-hint align="end">Like this pattern capital BUS-XXX-XXX</mat-hint>
+            <span *ngIf="!unique" style="color:red">This Plate Number Aulready exist</span>
+         
+          
+          </mat-form-field>
+        </p>
+        <br />
+        <button mat-raised-button type="submit" [disabled]="c.invalid">Submit</button>
+  
+      </form>
+    </mat-card>
+  </div>

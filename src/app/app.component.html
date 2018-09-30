@@ -1,0 +1,60 @@
+<div class="wrapper">
+        <div class="sidebar" data-color="green">
+     
+           <app-newsidebar></app-newsidebar>
+        </div>
+        
+        <div class="main-panel">
+               <div class="fixed-plugin">
+                <div class="dropdown show-dropdown">
+                    <a href="#" data-toggle="dropdown">
+                        <i class="fa fa-cog fa-2x"> </i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="adjustments-line">
+                            <a href="javascript:void(0)" class="switch-trigger">
+                                <p>About This App</p>
+                                <div class="clearfix"></div>
+                            </a>
+                        </li>
+                        <li style="    height: 13rem;" class="adjustments-line">
+                                <p>FlixBus company is currently growing and needs more stations for 
+                                    the buses throughout the globe.
+                                     In order to help it grows i build a small application  </p>
+                                     <div class="clearfix"></div>
+                                     <p>It build with Angular6 with Angular Material components and bootstrap</p>
+                                     
+                                     <div class="clearfix"></div>
+                            
+                        </li>
+                       
+                       
+                       
+                       
+                        
+                        <li class="button-container">
+                            <div class="">
+                                <a href="https://github.com/usamahamed" target="_blank" class="btn btn-warning btn-block btn-fill">View on github
+                                </a>
+                            </div>
+                        </li>
+                        <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
+                        <li class="button-container">
+                            <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre twitter-sharrre"><i class="fa fa-twitter"></i> · 256</button>
+                            <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre facebook-sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <app-newheader></app-newheader>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                         <router-outlet></router-outlet> 
+                    </div>
+                </div>
+            </div>
+           
+           <app-newfooter></app-newfooter>   
+        </div>
+    </div>

@@ -1,0 +1,84 @@
+<mat-form-field style="width: 127%;">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+<div class="mat-elevation-z8" style="width: 127%;">
+    <table mat-table  [dataSource]="dataSource" >
+  
+        <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+
+
+      
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="stationName">
+        <th mat-header-cell *matHeaderCellDef> stationName </th>
+        <td mat-cell *matCellDef="let element">
+           <a [routerLink] = "['/liststations', element.id,element.stationName]"> 
+            <button mat-button color="primary">{{element.stationName}} </button>
+              </a>
+          </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let element"> {{element.Address}} </td>
+      </ng-container>
+  
+     <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> city </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container> 
+      <ng-container matColumnDef="streetName">
+          <th mat-header-cell *matHeaderCellDef> streetName </th>
+          <td mat-cell *matCellDef="let element"> {{element.streetName}} </td>
+        </ng-container> 
+        <ng-container matColumnDef="selectedSLots">
+            <th mat-header-cell *matHeaderCellDef> selectedSLots </th>
+            <td mat-cell *matCellDef="let element" > 
+              <!-- <ul *ngFor="let el of element.selectedSLots ">
+                  <li>{{el.slot}}</li>
+              </ul> -->
+              <mat-form-field>
+                  <mat-select placeholder="All slots">
+                    <mat-option *ngFor="let el of element.selectedSLots" [value]="el.slot">
+                      {{el.slot}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              
+            </td>
+          </ng-container> 
+        
+          <ng-container matColumnDef="controllers">
+              <th mat-header-cell *matHeaderCellDef> controllers </th>
+              <td mat-cell *matCellDef="let element"> 
+      <button mat-raised-button color="primary" (click)="AddBus(element)" >Add Bus</button>
+
+  
+              </td>
+            </ng-container> 
+          
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>

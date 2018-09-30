@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+h1{
+	color:#a9ca49 !important;
+}
+
+input::placeholder{
+	color: #a9ca49;
+}
+
+#slot__content{
+height: 100vh !important;
+ transform: translateX(50%) !important;
+}
+#station__content {
+	    transform: translateX(78%) !important;
+}
+  #bus__content{
+  	    transform: translateX(44%) !important;
+  }
+
+
