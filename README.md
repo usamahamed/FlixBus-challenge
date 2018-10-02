@@ -1,4 +1,4 @@
-<p align="center"><a href="https://flixbus.com" target="_blank" rel="flixbus noreferrer"><img width="100" src="https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2013/04/fortumo-uuslogo-flower.png" alt="fortumo logo"></a></p>
+<p align="center"><a href="https://flixbus.com" target="_blank" rel="flixbus noreferrer"><img width="100" src="https://cdn.flixbus.de/2017-04/preview.png" alt="flixbus logo"></a></p>
 
 <p align="center">
   <a href="https://github.com/usamahamed/FlixBus-challenge"><img src="https://img.shields.io/circleci/project/vuejs/vue/dev.svg" alt="Build Status"></a>
