@@ -173,7 +173,7 @@ spyOn(localStorage, 'clear')
         "busType": "Double_Decker",
         "stations": 1538290681346,
         "plateNumber": "BUS-111-114"
-      }];
+      };
       service.CheckPlateExist(1).subscribe((result) => {
         expect(result['id']).toEqual(1);
       });
